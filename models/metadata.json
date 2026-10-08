@@ -1,0 +1,88 @@
+{
+  "features": [
+    "demand_mw",
+    "solar_mw",
+    "wind_mw",
+    "temperature",
+    "humidity",
+    "renewable_mw",
+    "renewable_penetration",
+    "net_load",
+    "renewable_ramp",
+    "demand_change",
+    "peak_load",
+    "temp_stress",
+    "demand_3h_avg",
+    "demand_6h_avg",
+    "demand_24h_avg",
+    "renewable_volatility",
+    "outages_24h",
+    "outages_7d",
+    "previous_outage",
+    "hour",
+    "is_weekend"
+  ],
+  "best_model": "logistic_regression",
+  "peak_threshold_mw": 1230.3,
+  "thresholds": {
+    "logistic_regression": 0.12643714578525542,
+    "random_forest": 0.11743843450569721
+  },
+  "metrics": {
+    "logistic_regression": {
+      "validation": {
+        "roc_auc": 0.7391781090944798,
+        "pr_auc": 0.09705412106256286,
+        "precision": 0.22727272727272727,
+        "recall": 0.23255813953488372,
+        "f1": 0.22988505747126436,
+        "threshold": 0.12643714578525542,
+        "event_rate": 0.029371584699453553
+      },
+      "test": {
+        "roc_auc": 0.759800926382182,
+        "pr_auc": 0.16533832957561692,
+        "precision": 0.21153846153846154,
+        "recall": 0.1506849315068493,
+        "f1": 0.176,
+        "threshold": 0.12643714578525542,
+        "event_rate": 0.04989747095010253
+      }
+    },
+    "random_forest": {
+      "validation": {
+        "roc_auc": 0.743531414169517,
+        "pr_auc": 0.09250564031603853,
+        "precision": 0.14432989690721648,
+        "recall": 0.32558139534883723,
+        "f1": 0.2,
+        "threshold": 0.11743843450569721,
+        "event_rate": 0.029371584699453553
+      },
+      "test": {
+        "roc_auc": 0.7643539962550507,
+        "pr_auc": 0.1756511230034079,
+        "precision": 0.20175438596491227,
+        "recall": 0.3150684931506849,
+        "f1": 0.24598930481283424,
+        "threshold": 0.11743843450569721,
+        "event_rate": 0.04989747095010253
+      }
+    }
+  },
+  "split_dates": {
+    "train": [
+      "2022-01-01 00:00:00",
+      "2024-08-30 23:00:00"
+    ],
+    "val": [
+      "2024-08-31 00:00:00",
+      "2024-10-30 23:00:00"
+    ],
+    "test": [
+      "2024-10-31 00:00:00",
+      "2024-12-30 22:00:00"
+    ]
+  },
+  "note": "Metrics refer to the dataset used at training time. If that was the bundled SYNTHETIC dataset they only demonstrate that the pipeline works."
+}
